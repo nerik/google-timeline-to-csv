@@ -1,0 +1,23 @@
+{
+  "name": "google-timeline-to-csv",
+  "version": "1.0.0",
+  "description": "\"Converts google timeline day data files (KML) into a single CSV file\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nerik/google-timeline-to-csv.git"
+  },
+  "author": "Erik Escoffier <erik.escoffier@gmail.com> (https://github.com/nerik/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nerik/google-timeline-to-csv/issues"
+  },
+  "homepage": "https://github.com/nerik/google-timeline-to-csv#readme",
+  "dependencies": {
+    "json2csv": "^3.0.1",
+    "xmldoc": "^0.4.0"
+  }
+}
