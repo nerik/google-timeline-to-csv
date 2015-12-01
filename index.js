@@ -27,7 +27,7 @@ files.filter(file => {
       var coord = track[i+1];
       var lonlat = coord.val.split(" ");
       points.push({
-        when: moment(when.val).format(),
+        time: moment.utc(when.val).format(), //drop timezone info
         latitude: lonlat[1],
         longitude: lonlat[0],
       })
