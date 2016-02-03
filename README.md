@@ -12,6 +12,11 @@ Initial goal is to have something digestible by CartoDB's Torque.
 
 - Download the kml files for each day you need (select a day, click on the cog icon on the bottom right, choose 'Export this day to KML')
 
+- clone this repo and install dependencies :
+```
+npm i
+```
+
 - Run the script :
 ```
 ./index.js directory_containing_kml_files > target_file.csv
