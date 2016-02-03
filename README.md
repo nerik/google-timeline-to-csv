@@ -27,3 +27,4 @@ npm i
 - Import to CartoDB
 
 - Have fun :)
+(remember that there is a limit of 500k rows per table by default)
