@@ -1,6 +1,7 @@
 # google-timeline-to-csv
-Converts google timeline day data files (KML) into a single CSV file.
-Initial goal is to have something digestible by CartoDB's Torque.
+Converts Google Timeline data to CSV. This allows temporal analysis of the data, with CartoDB's Torque for instance.
+It can handle multiple individual day files and merge them as one CSV file, or one single Takeout KML file.
+Note: this might be possible using ogr2ogr, but not out of the box AFAIK (using some KML driver). A simple customized node script seemed a faster and saner way.
 
 [![](https://raw.githubusercontent.com/nerik/google-timeline-to-csv/master/test/screenshot.png)](https://nerik.cartodb.com/viz/ef3108ae-984e-11e5-8415-0ecd1babdde5/public_map)
 
@@ -10,11 +11,14 @@ Initial goal is to have something digestible by CartoDB's Torque.
 
 - Go on the [Google Timeline](https://www.google.com/maps/timeline) page
 
-- Download the kml files for each day you need (select a day, click on the cog icon on the bottom right, choose 'Export this day to KML')
+- Download the kml files for each day you need (select a day, click on the cog icon on the bottom right, choose 'Export this day to KML'), or download your whole history as a single kml file.
 
 - Run the script :
 ```
-./index.js directory_containing_kml_files > target_file.csv
+./index.js [directory containing individual day files] > target_file.csv
+./index.js [single kml file] > target_file.csv
 ```
 
-- Upload to CartoDB or whatever.
+- Import to CartoDB
+
+- Have fun :)

@@ -8,15 +8,24 @@ var xmldoc = require('xmldoc');
 var json2csv = require('json2csv');
 var moment = require('moment');
 
-var dir = process.argv[2];
-var files = fs.readdirSync(dir);
-var fileRegex = /^history-([\d-]+)\.kml$/i;
+var inputPath = process.argv[2];
+
+var isDir = fs.statSync(inputPath).isDirectory();
+var files;
+
+if (isDir) {
+  var fileRegex = /^history-([\d-]+)\.kml$/i;
+  files = fs.readdirSync(inputPath).filter(file => {
+    return fileRegex.test(file);
+  })
+} else {
+  files = [inputPath];
+}
 
 var points = [];
-files.filter(file => {
-  return fileRegex.test(file);
-}).forEach(file => {
-  var xmlFile = fs.readFileSync(path.join(dir, file), "utf8");
+files.forEach(file => {
+  var filePath = (isDir) ? path.join(inputPath, file) : file;
+  var xmlFile = fs.readFileSync(filePath, "utf8");
   var xmlDocument = new xmldoc.XmlDocument(xmlFile);
 
   var track = xmlDocument.descendantWithPath("Document.Placemark.gx:Track").children;
