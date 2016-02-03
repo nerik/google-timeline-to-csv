@@ -13,6 +13,11 @@ Note: this might be possible using ogr2ogr, but not out of the box AFAIK (using 
 
 - Download the kml files for each day you need (select a day, click on the cog icon on the bottom right, choose 'Export this day to KML'), or download your whole history as a single kml file.
 
+- clone this repo and install dependencies :
+```
+npm i
+```
+
 - Run the script :
 ```
 ./index.js [directory containing individual day files] > target_file.csv
