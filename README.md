@@ -28,3 +28,9 @@ npm i
 
 - Have fun :)
 (remember that there is a limit of 500k rows per table by default)
+
+You might run into memory errors like: 
+```
+FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memory
+```
+As suggested by <a href="https://github.com/nerik/google-timeline-to-csv/issues/2">@JPvRiel</a>. Try increasing the default node heap size, e.g. using node `--max-old-space-size=8192 index.js ...`
